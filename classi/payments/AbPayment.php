@@ -8,10 +8,13 @@ abstract class AbPayment implements PaymentInterface{
     private $paymentType;
     
 
-    public function sendPayment(\classi\payments\float $import)
+    public function sendPayment($import)
     {
+        if(is_float($import)){
        $this->import = $import;
-        
+        } else{
+            trigger_error('errore di tipo');
+        }
     }
 
     public function setPaymentType(\classi\payments\PaymentType $paymentType)
