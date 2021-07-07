@@ -3,18 +3,22 @@ namespace classi\payments;
 
 class PaypalPayment extends AbPayment
 {
+
     private $email;
-    
-    public function __construct(string $email)
+
+    public function __construct($email)
     {
-        
+        if (is_string($email)) {
+            $this->email = $email;
+        } else {
+            trigger_error('errore di tipo');
+        }
     }
-    
-    public function sendPayment(\classi\payments\float $import)
+
+    public function sendPayment($import)
     {
-        $this->email = $email;     //TODO controllo email 
         
-        //pagamento effettuato con successo
+ 
     }
 }
 
